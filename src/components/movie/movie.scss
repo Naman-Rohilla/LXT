@@ -1,0 +1,97 @@
+@import "../../styles/variable.scss";
+
+.movie {
+  height: 93vh;
+  width: 100vw;
+  background-color: $primary-color;
+  display: flex;
+  justify-content: center;
+  padding-top: 78px;
+  position: relative;
+
+  .element {
+    width: 100%;
+    height: 94%;
+    margin: 20px;
+    border-color: transparent;
+    border-radius: 20px 0px 20px 20px;
+    background: linear-gradient(
+      31.75deg,
+      rgba(4, 44, 113, 0) 14.25%,
+      rgba(255, 255, 255, 1) 87%
+    );
+  }
+
+  .movie-text {
+    position: absolute;
+    bottom: 100px;
+    left: $primary-margin;
+    z-index: 1;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    width: 800px;
+
+    .movie-text-heading {
+      display: flex;
+      padding-bottom: 20px;
+      font-size: 8rem;
+    }
+
+    .movie-text-subheading {
+      display: flex;
+      padding-bottom: 20px;
+      font-size: 3rem;
+    }
+
+    .movie-text-description {
+      padding-bottom: 20px;
+      font-size: 1.5rem;
+    }
+
+    .movie-buttons {
+      display: flex;
+      gap: 20px;
+    }
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .movie {
+    height: 85vh;
+
+    .movie-text {
+      position: absolute;
+      bottom: 50px;
+      left: 40px;
+      z-index: 1;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      // width: 800px;
+      width: 80%;
+
+      .movie-text-heading {
+        display: flex;
+        padding-bottom: 20px;
+        font-size: 3rem;
+      }
+
+      .movie-text-subheading {
+        display: flex;
+        padding-bottom: 20px;
+        font-size: 1rem;
+      }
+
+      .movie-text-description {
+        padding-bottom: 20px;
+        font-size: 1rem;
+      }
+
+      .movie-buttons {
+        display: flex;
+        gap: 20px;
+      }
+    }
+  }
+}

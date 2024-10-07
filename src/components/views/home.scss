@@ -1,0 +1,300 @@
+@import "../../styles/variable.scss";
+
+.stats-card-view {
+  padding-top: 10px;
+  padding-inline: $primary-margin;
+  display: flex;
+  height: 300px;
+  width: 100%;
+  background-color: $primary-color;
+  box-sizing: border-box;
+}
+
+.prod-card-view {
+  position: relative;
+}
+
+.product-card-view {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  width: 100%;
+  background-color: $primary-color;
+  display: flex;
+  color: white;
+  padding-top: 100px;
+
+  z-index: 1;
+
+  .text-view {
+    top: 0;
+    z-index: 2;
+    background-color: $primary-color;
+    font-size: 16pxFf;
+    padding-left: $primary-margin;
+    padding-top: $primary-margin - 20;
+
+    .text-container {
+      display: flex;
+      gap: 10px;
+      font-size: 3.5rem;
+      font-weight: 200;
+    }
+
+    .text-description {
+      font-size: 1.2rem;
+      width: 600px;
+      padding-top: 10px;
+      display: flex;
+    }
+
+    .text-lxt-button {
+      padding-top: 20px;
+    }
+  }
+
+  > * {
+    flex: 1;
+  }
+
+  .gallery-view {
+    gap: 20px;
+    position: relative;
+    right: 0;
+    z-index: 100;
+    display: flex;
+    overflow: hidden;
+    padding-top: 80px;
+    padding-right: $primary-margin;
+
+    .container-view-1 {
+      display: flex;
+      height: 100%;
+      width: 250px;
+      // background-color: aliceblue;
+      overflow-y: scroll;
+      scroll-behavior: smooth;
+      margin-top: 10px;
+
+      &::-webkit-scrollbar {
+        display: none; // Hide scrollbar in WebKit browsers (Chrome, Safari)
+      }
+
+      .vertical-layer {
+        height: 90vh;
+        margin-top: 300px;
+      }
+    }
+    .container-view-2 {
+      display: flex;
+      height: 100%;
+      width: 250px;
+
+      overflow-y: scroll;
+      scroll-behavior: smooth;
+      margin-top: 40px;
+
+      &::-webkit-scrollbar {
+        display: none; // Hide scrollbar in WebKit browsers (Chrome, Safari)
+      }
+
+      .vertical-layer {
+        height: 90vh;
+        margin-top: 150px;
+      }
+    }
+    .container-view-3 {
+      display: flex;
+      height: 100%;
+      width: 250px;
+
+      overflow-y: scroll;
+      scroll-behavior: smooth;
+      margin-top: 10px;
+
+      &::-webkit-scrollbar {
+        display: none; // Hide scrollbar in WebKit browsers (Chrome, Safari)
+      }
+
+      .vertical-layer {
+        height: 90vh;
+        margin-top: 30px;
+      }
+    }
+  }
+}
+
+.about-card-view {
+  position: sticky;
+  top: 0;
+  min-height: 100vh;
+  height: auto;
+  width: 100%;
+  background-color: $primary-color-dim;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  padding-top: 500px;
+  z-index: 2;
+
+  display: flex;
+  align-items: flex-end;
+  box-sizing: border-box;
+
+  .about-card-container {
+    height: 55vh;
+    margin-inline: $primary-margin;
+  }
+
+  &::-webkit-scrollbar {
+    display: none; // Hide scrollbar in WebKit browsers (Chrome, Safari)
+  }
+
+  .stadium-view {
+    min-height: 100vh;
+    height: auto;
+    width: 100%;
+    z-index: 100;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    .stadium-background {
+      z-index: 1;
+      height: 100vh;
+      width: 0%;
+      position: sticky;
+      top: 0;
+      opacity: 1;
+      // align-self: flex-start;
+
+      .stadium-background-color {
+        position: absolute;
+        background: linear-gradient(
+          178.99deg,
+          #02173a 0.76%,
+          rgb(3, 29, 75, 0.9) 90.26%
+        );
+        height: 100vh;
+        width: 100vw;
+        top: 0;
+      }
+    }
+
+    .iphone-view {
+      z-index: 2;
+      height: 100vh;
+      width: 50%;
+      position: sticky;
+      top: 0;
+      align-self: flex-start;
+      padding-right: $primary-margin;
+
+      .iphone {
+        position: relative; /* Add this to position absolutely child elements */
+        float: right;
+        padding: $primary-margin;
+
+        img {
+          height: 700px; /* Set the height of the image */
+          width: 350px; /* Set the width of the image */
+          position: relative; /* Make sure img is positioned relatively */
+          z-index: 1; /* Set z-index lower than iframe */
+        }
+
+        video {
+          position: absolute; /* Keep iframe absolute to overlap img */
+          left: 20px;
+          top: 0; /* Position at the top of the container */
+          object-fit: cover;
+          // background-color: transparent;
+          z-index: 2; /* Ensure iframe is on top */
+          margin: $primary-margin + 5;
+          margin-top: 185px;
+          border-radius: 40px;
+        }
+
+        .iphone-button {
+          padding-left: 90px;
+        }
+      }
+    }
+
+    .stadium-slider-view {
+      min-height: 100vh;
+      height: auto;
+      padding-top: $primary-margin + 50;
+      box-sizing: border-box;
+      position: relative;
+      z-index: 3;
+      width: 50%;
+
+      .stadium-slider-container {
+        padding-inline: $primary-margin;
+        padding-bottom: 80px;
+        .stadium-heading {
+          font-size: 3rem;
+          padding-top: 100px;
+        }
+
+        .stadium-card {
+          display: flex;
+          flex-direction: column;
+          gap: 160px;
+          padding-top: 100px;
+          padding-bottom: 25px;
+        }
+      }
+
+      .watch-shop-view {
+        background-color: $primary-color;
+        height: 90vh;
+        width: 100vw;
+        position: sticky;
+        top: 0;
+        display: flex;
+        gap: 50px;
+        padding-top: 100px;
+
+        .img-left {
+          margin-left: $primary-margin;
+          position: relative;
+          width: 45%;
+
+          img {
+            position: absolute;
+            top: 15px;
+            right: 40px;
+            height: 45px;
+            width: 45px;
+          }
+
+          video {
+            object-fit: cover;
+            border-radius: 10px;
+          }
+        }
+
+        .img-center {
+          width: 30%;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 30px;
+          font-size: 5rem;
+        }
+
+        .img-right {
+          margin-right: $primary-margin;
+          // background-color: red;
+          width: 28%;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .stats-card-view {
+    padding-inline: 20px;
+  }
+}

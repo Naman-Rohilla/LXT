@@ -1,0 +1,69 @@
+@import "../../styles/variable.scss";
+
+.statistic-card {
+  background-color: $card-color;
+  width: inherit;
+  height: 180px;
+  display: flex;
+  color: white;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px 0px 10px 10px;
+  font-family: Cario, sans-serif;
+  font-size: 14px;
+
+  .content {
+    // padding: 40px;
+    padding-inline: 30px;
+    border-right: 1px solid $line-color;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+
+    .header {
+      display: flex;
+      font-weight: 600;
+
+      img {
+        height: 40px;
+        width: 40px;
+      }
+
+      .heading {
+        padding-left: 10px;
+        width: 70%;
+      }
+    }
+
+    .summary {
+      padding: 5px;
+      color: #efede8a6;
+      padding-right: 60px;
+    }
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .statistic-card {
+    font-size: 0.4rem;
+    .content {
+      padding-inline: 0px;
+      .header {
+        display: flex;
+        font-weight: 600;
+
+        img {
+          height: 20px;
+          width: 20px;
+        }
+
+        .heading {
+        }
+      }
+
+      .summary {
+        padding-right: 0px;
+      }
+    }
+  }
+}

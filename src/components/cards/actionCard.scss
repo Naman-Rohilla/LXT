@@ -1,0 +1,14 @@
+@import "../../styles/variable.scss";
+
+.action-card-view {
+  height: 320px;
+  width: 550px;
+  background-color: $card-color;
+  padding-inline: 50px;
+  padding-block: 20px;
+  display: flex;
+  font-size: 1.2rem;
+  flex-direction: column;
+  border-radius: 10px;
+  box-shadow: 10px 10px 30px $primary-color;
+}

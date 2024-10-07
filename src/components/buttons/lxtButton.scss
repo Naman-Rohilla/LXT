@@ -1,0 +1,23 @@
+.lxtButton {
+  height: 56px;
+  font-size: 18px;
+  font-weight: 500;
+  width: 180px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px 0px 10px 10px;
+}
+
+@media screen and (max-width: 850px) {
+  .lxtButton {
+    height: 40px;
+    font-size: 0.6rem;
+    font-weight: 500;
+    width: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px 0px 10px 10px;
+  }
+}
