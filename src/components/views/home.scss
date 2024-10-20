@@ -131,13 +131,13 @@
   height: auto;
   width: 100%;
   background-color: $primary-color-dim;
-  display: flex;
-  flex-direction: column;
+
   color: white;
   padding-top: 500px;
   z-index: 2;
 
   display: flex;
+  flex-direction: column;
   align-items: flex-end;
   box-sizing: border-box;
 
@@ -279,13 +279,13 @@
           display: flex;
           flex-direction: column;
           align-items: center;
-          gap: 30px;
-          font-size: 5rem;
+          gap: 35px;
+          font-size: 4rem;
         }
 
         .img-right {
           margin-right: $primary-margin;
-          // background-color: red;
+
           width: 28%;
         }
       }
@@ -295,6 +295,155 @@
 
 @media screen and (max-width: 850px) {
   .stats-card-view {
-    padding-inline: 20px;
+    margin-inline: 20px;
+    height: 200px;
+    width: auto;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    > * {
+      scroll-snap-align: start;
+      flex-shrink: 0;
+    }
+  }
+
+  .product-card-view {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding-top: 30px;
+    height: auto;
+
+    > * {
+      flex: none;
+    }
+
+    .text-view {
+      padding-left: 20px;
+      padding-top: 0px;
+
+      .text-container {
+        font-size: 1rem;
+        box-sizing: border-box;
+      }
+
+      .text-description {
+        box-sizing: border-box;
+        width: 100%;
+        font-size: 0.9rem;
+      }
+    }
+
+    .gallery-view {
+      width: 100%;
+      display: flex;
+      padding-inline: 20px;
+      padding-top: 0px;
+      box-sizing: border-box;
+
+      .container-view-1 {
+        width: 100%;
+
+        .horizontal-layer {
+          display: flex;
+          gap: 20px;
+        }
+      }
+    }
+
+    .text-lxt-button {
+      display: flex;
+      justify-content: center;
+      padding-top: 30px;
+    }
+  }
+
+  .about-card-view {
+    position: relative;
+    background-color: transparent;
+    padding-top: 100px;
+    align-items: flex-start;
+    min-height: 100vh;
+
+    .about-card-container {
+      margin-inline: 20px;
+      height: auto;
+    }
+
+    .stadium-view {
+      min-height: 100vh;
+      padding-top: 160px;
+      height: auto;
+      width: 100%;
+      z-index: 100;
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+
+      .stadium-background {
+        z-index: 1;
+        height: 100vh;
+        width: 0%;
+        position: sticky;
+        top: 0;
+        opacity: 1;
+        // align-self: flex-start;
+
+        .stadium-background-color {
+          position: absolute;
+          background: linear-gradient(
+            178.99deg,
+            #02173a 0.76%,
+            rgb(3, 29, 75, 0.9) 90.26%
+          );
+          height: 100vh;
+          width: 100vw;
+          top: 0;
+        }
+      }
+
+      .iphone-view {
+        display: none;
+      }
+
+      .stadium-slider-view {
+        min-height: 100vh;
+        height: auto;
+        padding-top: 10px;
+        box-sizing: border-box;
+        position: relative;
+        z-index: 3;
+        width: 100%;
+        padding-inline: 10px;
+
+        .stadium-slider-container {
+          padding-inline: 10px;
+          padding-bottom: 80px;
+          .stadium-heading {
+            font-size: 3rem;
+            padding-top: 0px;
+          }
+
+          .stadium-card {
+            display: flex;
+            flex-direction: row;
+            width: auto;
+            gap: 10px;
+            padding-top: 10px;
+            padding-bottom: 25px;
+            overflow-x: scroll;
+          }
+        }
+
+        .watch-shop-view {
+          display: none;
+        }
+      }
+    }
   }
 }

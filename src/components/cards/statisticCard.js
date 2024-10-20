@@ -1,4 +1,5 @@
 import "./statisticCard.scss";
+import { useSwipeable } from "react-swipeable";
 
 export default function StatisticCard({ cardData }) {
   const cardLength = cardData.length;
@@ -14,7 +15,7 @@ export default function StatisticCard({ cardData }) {
                 <div
                   className="content"
                   style={{
-                    width: `${divideWidth}%`,
+                    width: "300px",
                   }}
                   key={sc.id}
                 >

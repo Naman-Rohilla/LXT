@@ -1,0 +1,109 @@
+@import "../../styles/variable.scss";
+
+.footer-container {
+  height: 65vh;
+  background-color: white;
+  width: 100%;
+  padding-inline: $primary-margin;
+  box-sizing: border-box;
+  padding-top: 100px;
+
+  .form-footer {
+    background-color: #022359;
+    height: 310px;
+    width: 100%;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+
+    img:nth-child(1) {
+      transform: scale(1.8);
+      padding-left: 60px;
+    }
+
+    .form-container {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      color: white;
+      align-items: center;
+
+      .form-heading {
+        padding-block: 50px;
+        font-size: 2.5rem;
+      }
+
+      .input-container {
+        display: flex;
+        gap: 10px;
+        input {
+          background-color: transparent;
+          border: 1px solid white;
+          border-radius: 5px;
+          height: 52px;
+          width: 280px;
+          padding-left: 20px;
+          color: white;
+
+          &::placeholder {
+            color: white;
+          }
+
+          &:focus {
+            outline: none;
+          }
+        }
+
+        span {
+        }
+      }
+    }
+
+    img:nth-child(3) {
+      transform: scale(1.8) translateY(10px);
+    }
+  }
+
+  .footer-nav {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    gap: 30px;
+    padding-top: 45px;
+    .item {
+      text-decoration: none;
+      color: black;
+      font-weight: 500;
+      font-size: 0.9rem;
+    }
+  }
+
+  .footer-description {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+    color: rgba(0, 0, 0, 0.8);
+  }
+
+  .footer-divider {
+    height: 1px;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.1);
+    margin-top: 35px;
+  }
+
+  .footer-end {
+    display: flex;
+    align-items: center;
+    padding-top: 40px;
+    box-sizing: border-box;
+    color: rgba(0, 0, 0, 0.8);
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .footer-container {
+    display: none;
+  }
+}

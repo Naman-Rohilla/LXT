@@ -1,14 +1,39 @@
 @import "../../styles/variable.scss";
 
 .action-card-view {
-  height: 320px;
-  width: 550px;
-  background-color: $card-color;
-  padding-inline: 50px;
-  padding-block: 20px;
   display: flex;
   font-size: 1.2rem;
   flex-direction: column;
   border-radius: 10px;
   box-shadow: 10px 10px 30px $primary-color;
+  transition: background-color 0.1s ease-in-out, padding-inline 0.1s ease-in-out;
+  width: 580px;
+
+  &:hover {
+    padding-inline: 50px;
+    background-color: $card-color;
+  }
+
+  strong {
+    font-size: 1.6rem;
+    font-weight: 800;
+  }
+
+  .action-card-heading {
+    display: flex;
+    justify-content: space-between;
+
+    h2 {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+    }
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .action-card-view {
+    display: inline-flex;
+    flex-direction: column;
+  }
 }

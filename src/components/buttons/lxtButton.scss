@@ -1,6 +1,6 @@
 .lxtButton {
   height: 56px;
-  font-size: 18px;
+  // font-size: 18px;
   font-weight: 500;
   width: 180px;
   display: flex;
@@ -11,13 +11,15 @@
 
 @media screen and (max-width: 850px) {
   .lxtButton {
-    height: 40px;
-    font-size: 0.6rem;
+    height: auto;
+    padding-block: 8px;
+    // font-size: 0.8rem;
     font-weight: 500;
-    width: 120px;
+    width: auto;
+    padding-inline: 14px;
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 10px 0px 10px 10px;
+    border-radius: 5px 0px 5px 5px;
   }
 }

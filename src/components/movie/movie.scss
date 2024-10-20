@@ -58,12 +58,21 @@
 
 @media screen and (max-width: 850px) {
   .movie {
-    height: 85vh;
+    height: 90vh;
+    padding-top: 0px;
+    box-sizing: border-box;
+
+    .element {
+      margin-inline: 15px;
+      margin-block: 0px;
+      height: 100%;
+      box-sizing: border-box;
+    }
 
     .movie-text {
       position: absolute;
       bottom: 50px;
-      left: 40px;
+      left: 30px;
       z-index: 1;
       color: white;
       display: flex;
@@ -73,24 +82,26 @@
 
       .movie-text-heading {
         display: flex;
-        padding-bottom: 20px;
-        font-size: 3rem;
+        padding-bottom: 2px;
+        font-size: 2.5rem;
       }
 
       .movie-text-subheading {
         display: flex;
-        padding-bottom: 20px;
+        padding-bottom: 10px;
         font-size: 1rem;
       }
 
       .movie-text-description {
-        padding-bottom: 20px;
-        font-size: 1rem;
+        padding-bottom: 10px;
+        font-size: 0.8rem;
       }
 
       .movie-buttons {
         display: flex;
-        gap: 20px;
+        gap: 10px;
+        transform: translateY(10px);
+        font-size: 0.6rem;
       }
     }
   }

@@ -1,0 +1,38 @@
+@import "./variable.scss";
+
+.announcement-view {
+  height: 100vh;
+  color: white;
+  padding-inline: $primary-margin;
+  display: flex;
+  // padding-top: 100px;
+
+  > * {
+    flex: 1;
+  }
+
+  .announcement-heading {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    span:nth-child(1) {
+      font-size: 3.5rem;
+      font-weight: 800;
+    }
+
+    span:nth-child(2) {
+      font-size: 1.3rem;
+    }
+
+    .announcement-card-container {
+      padding-top: 60px;
+    }
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .announcement-view {
+    display: none;
+  }
+}

@@ -27,6 +27,10 @@
       }
     }
 
+    .mobile-bottom-nav {
+      display: none;
+    }
+
     .menu-items {
       display: flex;
       height: inherit;
@@ -62,6 +66,8 @@
 
 @media screen and (max-width: 850px) {
   .navbar {
+    height: 10vh;
+
     .navbar-container {
       margin-inline: 20px;
       .logo {
@@ -76,7 +82,27 @@
       }
 
       .menu-items {
-        display: none;
+        .item {
+          display: none;
+        }
+      }
+
+      .mobile-bottom-nav {
+        background-color: $card-color;
+        width: 100vw;
+        height: 70px;
+        position: fixed;
+        display: flex;
+        margin: 0;
+        left: 0;
+        bottom: 0;
+
+        .item {
+          width: 100%;
+          text-decoration: none;
+          color: white;
+          font-size: 0.6rem;
+        }
       }
     }
   }

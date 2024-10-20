@@ -8,6 +8,8 @@ import LxtButton from "../buttons/lxtButton";
 import statisticData from "../../jsons/statisticData";
 import "./home.scss";
 import { stadiumData } from "../../jsons/productData";
+import "../../styles/announcementView.scss";
+import { useSwipeable } from "react-swipeable";
 
 const footerObject = {
   heading: "Beginner",
@@ -50,6 +52,16 @@ const ProductView = () => {
     };
   }, [refs]);
 
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   return (
     <div className="product-card-view">
       <div className="text-view">
@@ -66,15 +78,17 @@ const ProductView = () => {
           Effectively highlights the focus on enhancing a skater's abilities
           through top-tier coaching and the latest gear
         </span>
-        <div className="text-lxt-button">
-          <LxtButton text="BOOK A CLASS" color="red" />
-        </div>
+        {!isMobile && (
+          <div className="text-lxt-button">
+            <LxtButton text="BOOK A CLASS" color="red" />
+          </div>
+        )}
       </div>
-      <div className="gallery-view">
-        {refs.map((ref, index) => (
-          <div className={`container-view-${index + 1}`} ref={ref} key={index}>
-            <div className="vertical-layer">
-              {[...Array(2)].map((_, i) => (
+      {isMobile ? (
+        <div className="gallery-view">
+          <div className={`container-view-1`}>
+            <div className="horizontal-layer">
+              {[...Array(6)].map((_, i) => (
                 <ProductCard
                   key={i}
                   footerObject={footerObject}
@@ -84,8 +98,34 @@ const ProductView = () => {
               ))}
             </div>
           </div>
-        ))}
-      </div>
+        </div>
+      ) : (
+        <div className="gallery-view">
+          {refs.map((ref, index) => (
+            <div
+              className={`container-view-${index + 1}`}
+              ref={ref}
+              key={index}
+            >
+              <div className="vertical-layer">
+                {[...Array(2)].map((_, i) => (
+                  <ProductCard
+                    key={i}
+                    footerObject={footerObject}
+                    backgroundVideo="skate.gif"
+                    hoverImage="rollarskates.png"
+                  />
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      )}
+      {isMobile && (
+        <div className="text-lxt-button">
+          <LxtButton text="BOOK A CLASS" color="red" />
+        </div>
+      )}
     </div>
   );
 };
@@ -131,7 +171,13 @@ const WatchShopView = () => {
         <img width={"100%"} height={220} src="watchshop/watch2.png" />
         <span className="text-shop">Shop Live</span>
         <img width={"60%"} src="watchshop/watch5.png" />
-        <LxtButton text={"Watch & Shop"} color={"red"} />
+        <span
+          style={{
+            fontSize: "1rem",
+          }}
+        >
+          <LxtButton text={"Watch & Shop"} color={"red"} />
+        </span>
         <img width={"100%"} height={150} src="watchshop/watch1.png" />
       </div>
       <div className="img-right">
@@ -151,7 +197,6 @@ const StadiumView = () => {
             style={{
               height: "100vh",
               width: "100vw",
-              // top: 0,
             }}
             src="stadium.png"
           />
@@ -181,7 +226,46 @@ const StadiumView = () => {
   );
 };
 
+const AnouncementView = () => {
+  return (
+    <div className="announcement-view">
+      <div className="announcement-heading">
+        <span>Announcement</span>
+        <span>Get Ready to Roll—Exciting Skating Event Ahead</span>
+        <div className="announcement-card-container">
+          {stadiumData?.map((sd, index) => (
+            <ActionCard
+              key={index}
+              heading={sd.heading}
+              list={sd.list}
+              defaultExpanded={false}
+            ></ActionCard>
+          ))}
+        </div>
+        <LxtButton
+          text={"KNOW MORE"}
+          color={"transparent"}
+          borderColor="white"
+        />
+      </div>
+      <div>
+        <img width={"105%"} src="race.png" />
+      </div>
+    </div>
+  );
+};
+
 export default function Home() {
+  const handlers = useSwipeable({
+    onSwipedLeft: () => handleSwipe("left"),
+    onSwipedRight: () => handleSwipe("right"),
+    preventDefaultTouchmoveEvent: true,
+  });
+
+  const handleSwipe = (direction) => {
+    console.log(`Swiped ${direction}`);
+  };
+
   return (
     <>
       <Movie />
@@ -197,6 +281,7 @@ export default function Home() {
           <StadiumView />
         </div>
       </div>
+      <AnouncementView />
     </>
   );
 }
