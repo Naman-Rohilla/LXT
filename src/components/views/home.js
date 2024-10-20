@@ -212,11 +212,13 @@ const StadiumView = () => {
                 <ActionCard key={index} heading={sd.heading} list={sd.list} />
               ))}
             </div>
-            <LxtButton
-              text={"READ MORE"}
-              color="transparent"
-              borderColor="white"
-            />
+            <span className="stadium-button">
+              <LxtButton
+                text={"READ MORE"}
+                color="transparent"
+                borderColor="white"
+              />
+            </span>
           </div>
           <WatchShopView />
         </div>

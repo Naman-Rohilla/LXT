@@ -437,6 +437,15 @@
             padding-top: 10px;
             padding-bottom: 25px;
             overflow-x: scroll;
+
+            &::-webkit-scrollbar {
+              display: none; // Hide scrollbar in WebKit browsers (Chrome, Safari)
+            }
+          }
+
+          .stadium-button {
+            display: flex;
+            justify-content: center;
           }
         }
 

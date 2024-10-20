@@ -21,14 +21,14 @@
       left: 0px;
       transition: transform 0.6s ease-in-out; /* Smooth transition */
 
-      /* Add smooth transition animation */
-      &.next {
-        animation: imgSlideInRight 0.6s ease-in-out;
-      }
+      // /* Add smooth transition animation */
+      // &.next {
+      //   animation: imgSlideInRight 0.6s ease-in-out;
+      // }
 
-      &.prev {
-        animation: imgSlideInLeft 0.6s ease-in-out;
-      }
+      // &.prev {
+      //   animation: imgSlideInLeft 0.6s ease-in-out;
+      // }
     }
   }
 
@@ -111,11 +111,13 @@
     width: 100%;
     height: auto;
     flex-direction: column;
-    box-sizing: border-box;
+    // overflow: hidden;
 
     .profile-picture {
       height: 100%;
-      width: 100%;
+      width: 90%;
+      padding-inline: 10px;
+      box-sizing: border-box;
 
       overflow: visible;
       display: flex;
@@ -123,21 +125,25 @@
 
       img {
         box-sizing: border-box;
-        width: 90%;
+        overflow: visible;
+
+        object-fit: contain;
         z-index: 100;
         bottom: 0px;
-        transform: scale(1.4) translateY(-50px) translateX(-15px);
-        object-fit: fill;
+        transform: scale(1.4) translateY(-50px);
+        object-fit: contain;
         position: relative;
         transition: none;
+        padding: 0;
+        margin: 0;
 
-        &.next {
-          animation: none;
-        }
+        // &.next {
+        //   animation: none;
+        // }
 
-        &.prev {
-          animation: none;
-        }
+        // &.prev {
+        //   animation: none;
+        // }
       }
     }
 
@@ -146,6 +152,7 @@
       width: 100%;
       box-sizing: border-box;
       position: relative;
+      padding-inline: 15px;
 
       /* Slider controls */
       .slider-controls {

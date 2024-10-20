@@ -58,8 +58,8 @@ export default function ProfileCard() {
     <div className="profile-card">
       <div className="profile-picture">
         <img
-          key={animationKey} // Use animationKey as the key
-          className={`profile-img ${direction}`}
+          key={animationKey}
+          className={`profile-img`}
           src={imgSrc}
           alt="Profile"
         />
